@@ -1,0 +1,231 @@
+.row {
+  @include flex-grid-row;
+  @include flexbox_row;
+  justify-content: space-between;
+}
+
+  //Start styles for slider-jq
+  .slider-jq {
+    width: rem-calc(300);
+    height: rem-calc(400);
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #ccc;
+    ul {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+    &__content {
+      list-style: none;
+      text-align: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: $white-color;
+      opacity: 0;
+      transition: .6s;
+      &.active {
+        opacity: 1;
+      }
+    }
+    &__img {
+      display: block;
+      margin: 0 auto rem-calc(30);
+      padding-top: rem-calc(30);
+    }
+    &__title {
+      text-align: center;
+      margin-bottom: rem-calc(20);
+      line-height: 1;
+      font-family: $title-font-family;
+      font-size: rem-calc(25);
+      font-weight: 700;
+    }
+    &__subtitle {
+      text-align: center;
+      font-family: $desc-font-family;
+      font-size: rem-calc(20);
+      font-weight: 500;
+    }
+    .next {
+      position: absolute;
+      top: rem-calc(320);
+      left: 25%;
+      color: $color-1;
+      background: $head-color;
+      padding: rem-calc(15) rem-calc(35);
+      font-size: rem-calc(20);
+      font-weight: 500;
+      transition: all .3s ease;
+      &:hover {
+        color: $color-4;
+        background: $color-3;
+      }
+    }
+  }
+  //End styles for slider-jq
+
+  //Start styles for Tabs
+  .weather {
+    width: rem-calc(400);
+    height: rem-calc(400);
+    background: $head-color;
+    .active {
+      background: linear-gradient(to top, $color-8, $head-color, $color-8);
+    }
+    @include flexbox_column;
+    &__tab-content {
+      align-items: flex-start;
+      height: rem-calc(300);
+    }
+    &__tab-item {
+      height: 100%;
+      background: $head-color;
+    }
+    &__region {
+      @include flexbox_row;
+      justify-content: space-between;
+      padding-top: rem-calc(20);
+      padding-bottom: rem-calc(60);
+      &:nth-child(1) {
+        padding-left: rem-calc(20);
+      }
+      span {
+        text-transform: uppercase;
+        &:last-child {
+          padding-right: rem-calc(20);
+        }
+      }
+    }
+    &__grad {
+      font-size: rem-calc(65);
+      text-align: center;
+      font-weight: bold;
+      color: $white-color;
+      span:last-child {
+        padding-left: rem-calc(20);
+      }
+    }
+    &__tabs {
+      align-items: flex-end;
+      @include flexbox_row;
+      height: rem-calc(100);
+      border-top: rem-calc(2) solid $black-color;
+    }
+    &__tab {
+      width: rem-calc(100);
+      height: 100%;
+      cursor: pointer;
+      background: $head-color;
+    }
+    &__tab:not(:last-child) {
+      border-right: rem-calc(2) solid $black-color;
+      transition: all .3s ease;
+    }
+    &__tab:hover {
+      background: $color-8;
+    }
+    &__icon {
+      color: $white-color;
+      font-size: rem-calc(20);
+      text-align: center;
+      padding-top: rem-calc(20);
+    }
+    &__text {
+      color: $white-color;
+      font-family: $title-font-family;
+      font-size: rem-calc(17);
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+  //End styles for Tabs
+
+//Start styles for calendar
+.cal{
+  width: rem-calc(380);
+  height: rem-calc(320);
+  //box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  font-family: $title-font-family;
+  background-color: $white-color;
+}
+
+.ui-datepicker-header{
+  background-color: $head-color;
+  color: $white-color;
+  text-align: center;
+  font-family: $title-font-family;
+  padding: rem-calc(12);
+  height: rem-calc(75);
+}
+
+.ui-datepicker-prev span,
+.ui-datepicker-next span{
+  display: none;
+}
+
+.ui-datepicker-prev:after{
+  content: "<";
+  border: solid 1px $white-color;
+  border-radius: 50%;
+  padding: 0 rem-calc(16);
+  font-size: 2rem;
+  float: left;
+  margin-left: rem-calc(12);
+  cursor: pointer;
+}
+
+
+.ui-datepicker-next:after{
+  content: ">";
+  border: solid 1px $white-color;
+  border-radius: 50%;
+  padding: 0 rem-calc(16);
+  float: right;
+  font-size: 2rem;
+  margin-right: rem-calc(12);
+  cursor:pointer;
+}
+.ui-datepicker-calendar th{
+  padding: rem-calc(12);
+  color: $head-color;
+}
+
+.ui-datepicker-calendar {
+  text-align: center;
+  margin: 0 auto;
+  padding: rem-calc(10);
+}
+
+.ui-datepicker-title{
+  padding: rem-calc(12);
+  font-size: rem-calc(25);
+}
+
+.ui-datepicker-calendar td {
+  padding: 0 rem-calc(4);
+}
+
+.ui-datepicker-calendar .ui-state-default {
+  text-decoration: none;
+  color: $black-color;
+  font-size: rem-calc(17);
+}
+
+.ui-datepicker-calendar .ui-state-active {
+  color: $head-color;
+  border: solid 1px $head-color;
+  padding: 0 rem-calc(4);
+  text-align: center;
+}
+
+//End styles for calendar
+

@@ -1,0 +1,133 @@
+
+.wrap {
+  background: $white-color;
+  margin-top: rem-calc(-17);
+  height: rem-calc(66);
+}
+.ba-logo {
+  margin-left: rem-calc(10);
+}
+.no-js .top-bar {
+  display: none;
+}
+[data-responsive-toggle] {
+  @include breakpoint(sm) {
+    display: none;
+  }
+}
+.responsive-menu {
+  @include breakpoint(xs) {
+    display: none;
+  }
+}
+.menu-icon--open {
+  transform: none;
+}
+.top-bar {
+  //margin-bottom: rem-calc(30);
+  background: $white-color;
+  @include breakpoint(tb) {
+    margin-bottom: rem-calc(80);
+  }
+  @include breakpoint(xs) {
+    margin-bottom: rem-calc(50);
+  }
+  &__title {
+    margin: 0;
+  }
+}
+.top-bar,
+.top-bar ul {
+  background: none;
+}
+
+.top-bar ul {
+  @include breakpoint(xs) {
+    background: $color-6;
+  }
+}
+.main-menu {
+  align-items: center;
+  &__item {
+          border-right: rem-calc(1) solid $black-color;
+        }
+        &__item:last-child {
+          border-right: none;
+        }
+  &__item:not(:last-child):hover {
+    background-color: $head-color;
+  }
+  @include breakpoint(xs) {
+    width: 90%;
+    position: absolute;
+    color: $head-color;
+  }
+  a {
+    @include for-menu;
+    @include breakpoint(tb) {
+      font-size: rem-calc(20);
+      transition: background .3s;
+    }
+    @include breakpoint(xs) {
+      text-align: center;
+      font-size: rem-calc(18);
+    }
+  }
+  &__form {
+          position: relative;
+        }
+        &__area {
+          position: relative;
+          width: 100%;
+          opacity: 0.5;
+          font-family: $title-font-family;
+          font-size: rem-calc(14);
+          font-weight: 700;
+          line-height: rem-calc(41);
+          text-transform: uppercase;
+          background-color: $color-7;
+          color: $color-8;
+          padding-left: rem-calc(16);
+          border: none;
+          outline: none;
+        }
+        &__area-submit {
+          width: rem-calc(16);
+          height: rem-calc(16);
+          position: absolute;
+          cursor: pointer;
+          right: rem-calc(20);
+          top: 20%;
+          transform-origin: 100% 50%;
+          transform: translate3d(0, -10%, 0) scale(1);
+          transition: transform .5s;
+        }
+        &__area-submit:hover {
+          transform: translate3d(0, -10%, 0) scale(1.5);
+        }
+}
+
+.menu-icon {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: rem-calc(20);
+  height: rem-calc(18);
+  cursor: pointer;
+}
+
+//.sheensay_fixed {
+//  padding-left: 15px;
+//  margin-bottom: 0;
+//  //left:50%;
+//  //margin-left:-25%;
+//  border-radius: 5px;
+//  width: 81.5%;
+//  position: fixed !important;
+//  top: 0 !important;
+//  background: rgba(159, 154, 207, 0.5);
+//  z-index: 100;
+//  @media screen and (max-width: 745px) {
+//    visibility: hidden;
+//  }
+//}

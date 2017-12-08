@@ -1,0 +1,23 @@
+{
+  "name": "bower-file-project",
+  "description": "My test project",
+  "main": "gulpfile.js",
+  "authors": [
+    "Vladimir"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "slick-carousel": "^1.7.1"
+  },
+  "devDependencies": {
+    "foundation-sites": "^6.4.3"
+  }
+}

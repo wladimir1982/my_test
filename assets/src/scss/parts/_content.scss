@@ -1,0 +1,154 @@
+
+.row {
+  @include flex-grid-column(12, 15);
+  @include flex-grid-row;
+  justify-content: center;
+  .wrapper {
+    @include flexbox_row;
+    justify-content: space-between;
+    padding-top: rem-calc(35);
+    padding-bottom: rem-calc(35);
+
+    //Start styles for slider
+    .slider {
+      @include flex-grid-column(5);
+      width: rem-calc(600);
+      height: rem-calc(250);
+      &__img {
+        height: rem-calc(250);
+        width: 100%;
+        display: block;
+        margin: auto;
+      }
+    }
+      .slick-list {
+        height: inherit;
+      }
+      .slick-next {
+        right: 0;
+      }
+      .slick-prev {
+        left: 0;
+      }
+      .slick-prev,
+      .slick-next {
+        width: rem-calc(35);
+        height: rem-calc(35);
+        top: inherit;
+        bottom: rem-calc(-51);
+        background-color: $head-color;
+        transition: all .3s ease;
+        z-index: 1;
+      }
+      .slick-prev:hover,
+      .slick-next:hover {
+        background-color: $head-color;
+      }
+      .slick-dots {
+        background-color: $white-color;
+        padding: rem-calc(3);
+        margin-bottom: rem-calc(-5);
+      }
+      .slick-dots li button:before {
+        width: rem-calc(20);
+        height: rem-calc(20);
+        border: 1px solid $head-color;
+        border-radius: 50%;
+        content: '';
+      }
+      .slick-dots li.slick-active button:before {
+        opacity: .75;
+        background-color: $head-color;
+      }
+
+    //End styles for slider
+
+    //Start styles for sicial
+    .social {
+      @include flex-grid-column(4);
+      @include flexbox_row;
+      justify-content: space-around;
+      width: rem-calc(300);
+      list-style: none;
+      &__item {
+        width: rem-calc(120);
+        height: rem-calc(120);
+        position: relative;
+        text-align: center;
+        transition: all .3s ease;
+      }
+      &__item:nth-child(1) {
+        background-color: $color-1;
+        margin-right: rem-calc(20);
+        margin-left: rem-calc(40);
+        margin-bottom: rem-calc(41);
+      }
+      &__item:nth-child(2) {
+        background-color: $color-2;
+        margin-right: rem-calc(40);
+        margin-bottom: rem-calc(41);
+      }
+      &__item:nth-child(3) {
+        background-color: $color-3;
+        margin-right: rem-calc(20);
+        margin-left: rem-calc(40);
+      }
+      &__item:last-child {
+        margin-right: rem-calc(40);
+        background-color: $color-1;
+      }
+      &__link {
+        color: $white-color;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: rem-calc(70);
+        transform: translate(-50%, -50%);
+        transition: all .3s ease;
+      }
+      &__link:hover {
+        color: $color-4;
+        box-shadow: inset 0 0 1em $color-5, 0 0 1em $color-4;
+      }
+    }
+    //End styles for social
+
+    //Start styles for box info
+    .box {
+      @include flex-grid-column(3);
+      background: $white-color;
+      &__img {
+        display: block;
+        margin-bottom: rem-calc(23);
+        img {
+          width: rem-calc(300);
+          height: rem-calc(135);
+        }
+      }
+      &__title {
+        @include for-title;
+      }
+      &__desc {
+        @include for-desc;
+      }
+      &__icon {
+        @include flexbox_row;
+        justify-content: space-between;
+        background: $head-color;
+      }
+      &__item {
+        padding: rem-calc(12) rem-calc(22);
+        color: $white-color;
+        text-align: center;
+      }
+      &__item:nth-child(1) {
+        border-right: rem-calc(2) solid $white-color;
+      }
+      &__item:nth-child(2) {
+        border-right: rem-calc(2) solid $white-color;
+      }
+    }
+    //End style for box info
+  }
+}
+

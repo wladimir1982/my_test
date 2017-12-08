@@ -1,0 +1,96 @@
+.drop {
+  padding-top: rem-calc(30);
+  padding-bottom: rem-calc(30);
+}
+
+.row {
+  @include flex-grid-row;
+}
+
+//Start style for accordion
+
+.accordion {
+  width: rem-calc(300);
+  background: transparent;
+
+  &__heading {
+    margin: 0;
+    font-family: $title-font-family;
+    font-size: rem-calc(25);
+    font-weight: 600;
+    background-color: $head-color;
+    border-bottom: rem-calc(2) solid $black-color;
+  }
+  a {
+    letter-spacing: rem-calc(1);
+    color: $white-color;
+    text-decoration: none;
+    display: block;
+    padding: rem-calc(10) 0 rem-calc(10) rem-calc(20);
+    border-bottom: solid rem-calc(2) $color-8;
+    transition: all .5s ease;
+  }
+  a:hover {
+    background: linear-gradient(to top, $color-8, $head-color, $color-8);
+  }
+  &__ul {
+    list-style-type: none;
+    background: transparent;
+  }
+  &__ul-i {
+    display: none;
+    background: $white-color;
+    height: rem-calc(130);
+  }
+  &__ul li.tap ul {
+    display: block;
+  }
+
+  &__item {
+    border-bottom: solid rem-calc(2) $color-8;
+    display: table-cell;
+    &:only-child {
+      padding-right: rem-calc(50);
+    }
+  }
+  &__doc {
+    padding-left: rem-calc(10);
+    //border-bottom: solid rem-calc(2) $color-8;
+  }
+  &__title {
+    margin-left: rem-calc(-15);
+    margin-right: rem-calc(17);
+  }
+  &__number {
+    padding: rem-calc(2) rem-calc(8);
+    display: inline-block;
+
+    //padding-right: rem-calc(8);
+    //padding-left: rem-calc(8);
+    //padding: rem-calc(0) rem-calc(6);
+    margin-left: rem-calc(40);
+    border: solid 1px #000;
+    border-radius: 50%;
+  }
+
+  //&__item-text {
+  //  margin: 0;
+  //  padding: 20px 10px;
+  //  text-align: center;
+  //  background-color: $white-color;
+  //  color: $black-color;
+  //  font-family: $desc-font-family;
+  //  font-size: 14px;
+  //}
+  &__info {
+    @include flexbox_row;
+    justify-content: space-between;
+    border-bottom: solid rem-calc(1) $black-color;
+    list-style: none;
+    font-size: rem-calc(16);
+    color: $color-1;
+    padding: rem-calc(10)  rem-calc(10);
+  }
+}
+
+//End style for accordion

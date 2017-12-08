@@ -1,0 +1,69 @@
+@mixin for-title {
+  text-align: center;
+  color: $black-color;
+  font-family: $title-font-family;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+@mixin for-desc {
+  text-align: center;
+  color: $black-color;
+  font-family: $desc-font-family;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+@mixin flexbox_row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+@mixin flexbox_column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin for-menu {
+  color: $black-color;
+  font-family: $title-font-family;
+  font-size: 24px;
+  font-weight: 600;
+}
+//Foundation Breakpoints
+@mixin breakpoint($point) {
+  /* Small only */
+  @if $point == xs {
+    @media screen and (max-width: 39.9375em) {
+      @content;
+    }
+  }
+    /* Medium and up */
+  @else if $point == sm {
+    @media screen and (min-width: 40em) {
+      @content;
+    }
+  }
+    /* Medium only */
+  @else if $point == tb {
+    @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+      @content;
+    }
+  }
+    /* Large and up */
+  @else if $point == md {
+    @media screen and (min-width: 64em) {
+      @content;
+    }
+  }
+    /* Large only */
+  @else if $point == desktop {
+    @media screen and (min-width: 64em) and (max-width: 74.9375em) {
+      @content;
+    }
+  }
+}
