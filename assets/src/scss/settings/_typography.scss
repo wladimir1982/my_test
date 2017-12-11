@@ -1,11 +1,17 @@
 
 @import url('https://fonts.googleapis.com/css?family=PT+Sans:300,400,500,600,700,800,900');
 
-
 @import url('https://fonts.googleapis.com/css?family=Proxima+Nova:300,400,600,700,900');
+
+@font-face {
+  font-family: FontAwesome;
+  src: url('../../../plugins/font-awesome/fonts/fontawesome-webfont.svg');
+}
+
 /*Global Variables*/
 $title-font-family: 'Proxima Nova', sans-serif;
 $desc-font-family: 'PT Sans', sans-serif;
+$font-awesome: 'FontAwesome';
 
 
 

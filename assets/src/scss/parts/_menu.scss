@@ -3,6 +3,12 @@
   background: $white-color;
   margin-top: rem-calc(-17);
   height: rem-calc(66);
+  @media screen and (min-width: 640px) and (max-width: 831px) {
+    height: rem-calc(56);
+  }
+  @media screen and (max-width: 640px) {
+    margin-top: 0;
+  }
 }
 .ba-logo {
   margin-left: rem-calc(10);
@@ -19,6 +25,7 @@
   @include breakpoint(xs) {
     display: none;
   }
+  z-index: 10;
 }
 .menu-icon--open {
   transform: none;
@@ -42,7 +49,11 @@
 }
 
 .top-bar ul {
-  @include breakpoint(xs) {
+
+  //@include breakpoint(xs) {
+  //  background: $color-6;
+  //}
+  @media screen and (max-width: 640px) {
     background: $color-6;
   }
 }
@@ -50,12 +61,22 @@
   align-items: center;
   &__item {
           border-right: rem-calc(1) solid $black-color;
+    @media screen and (max-width: 640px) {
+      border-right: none;
+    }
         }
         &__item:last-child {
           border-right: none;
+          @media screen and (min-width: 640px) and (max-width: 831px) {
+            width: rem-calc(165);
+          }
         }
   &__item:not(:last-child):hover {
     background-color: $head-color;
+    text-align: center;
+    @media screen and (max-width: 640px) {
+      width: 100%;
+    }
   }
   @include breakpoint(xs) {
     width: 90%;
@@ -65,12 +86,15 @@
   a {
     @include for-menu;
     @include breakpoint(tb) {
-      font-size: rem-calc(20);
+      font-size: rem-calc(26);
       transition: background .3s;
     }
     @include breakpoint(xs) {
       text-align: center;
       font-size: rem-calc(18);
+    }
+    @media screen and (min-width: 640px) and (max-width: 831px) {
+      font-size: rem-calc(16);
     }
   }
   &__form {
@@ -90,6 +114,9 @@
           padding-left: rem-calc(16);
           border: none;
           outline: none;
+          @media screen and (min-width: 640px) and (max-width: 831px) {
+            line-height: rem-calc(30);
+          }
         }
         &__area-submit {
           width: rem-calc(16);

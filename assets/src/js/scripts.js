@@ -10,51 +10,10 @@
 
 //    Slick slider End
 
-
-// Responsive Slider Begin
-
-    $('.team__slider').slick({
-        dots: true,
-        infinite: false,
-        speed: 300,
-        slidesToShow: 4,
-        slidesToScroll: 4,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-            // You can unslick at a given breakpoint now by adding:
-            // settings: "unslick"
-            // instead of a settings object
-        ]
-    });
-// Responsive Slider End
-
-
     //Slider-jq Begin
 
     var $item = $('.slider-jq__content');
-    var $next = $('.next');
+    var $next = $('.slider-jq__next');
 
     $item.first().addClass('active');
 
@@ -93,38 +52,18 @@
 
     //Accordion Begin
 
-
-
-
-    $(document).ready(function(e) {
-        $('.has-sub').click(function () {
-            $(this).toggleClass('tap');
-        });
+    var tabs = $('#nav a');
+    tabs.click(function(e){
+        e.preventDefault();
+        tabs.not(this).siblings('div').animate({
+            height: 'hide'
+        }, 0);
+        var cItem = $(this).siblings('div');
+        cItem.animate({
+            height: cItem.css('display') == 'none' ? 'show' : 'hide'
+        }, 0);
     });
 
-
-
-    //     var $headings = $('.accordion__item-heading'),
-    //         $texts = $('.accordion__item-text');
-    //
-    //     // hide all text except first
-    //     $texts.not(':first').show();
-    //
-    //     // click on item heading
-    //     $headings.on('click', function() {
-    //
-    //         // if already open, than do nothing
-    //         if ($(this).next().is(':visible')) return;
-    //
-    //         // hide all texts
-    //         $texts.slideUp(600);
-    //
-    //         // open this text
-    //         $(this).next('.accordion__item-text').slideDown(600);
-    //
-    //     });
-    //
-    // });
     //Accordion End
 
 
@@ -180,33 +119,33 @@
 
 
     // Cкрипт для фиксации меню начало
-    jQuery(document).ready(function ($) {
-        var
-
-            $window = $(window), // Основное окно
-
-            $target = $(".top-bar"), // Блок, который нужно фиксировать при прокрутке
-
-            $h = $target.offset().top; // Определяем координаты верха нужного блока (например, с навигацией или виджетом, который надо фиксировать)
-
-        $window.on('scroll', function () {
-
-            // Как далеко вниз прокрутили страницу
-            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-            // Если прокрутили скролл ниже макушки нужного блока, включаем ему фиксацию
-            if (scrollTop > $h) {
-
-                $target.addClass("sheensay_fixed");
-
-                // Иначе возвращаем всё назад
-            } else {
-
-                $target.removeClass("sheensay_fixed");
-            }
-        });
-
-    });
+    // jQuery(document).ready(function ($) {
+    //     var
+    //
+    //         $window = $(window), // Основное окно
+    //
+    //         $target = $(".top-bar"), // Блок, который нужно фиксировать при прокрутке
+    //
+    //         $h = $target.offset().top; // Определяем координаты верха нужного блока (например, с навигацией или виджетом, который надо фиксировать)
+    //
+    //     $window.on('scroll', function () {
+    //
+    //         // Как далеко вниз прокрутили страницу
+    //         var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    //
+    //         // Если прокрутили скролл ниже макушки нужного блока, включаем ему фиксацию
+    //         if (scrollTop > $h) {
+    //
+    //             $target.addClass("sheensay_fixed");
+    //
+    //             // Иначе возвращаем всё назад
+    //         } else {
+    //
+    //             $target.removeClass("sheensay_fixed");
+    //         }
+    //     });
+    //
+    // });
 
 // Cкрипт для фиксации меню конец
 
