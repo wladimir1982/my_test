@@ -75,6 +75,230 @@ this.activeTarget=b,this.clear();var c=this.selector+'[data-target="'+b+'"],'+th
 
     //Accordion End
 
+    //Search Begin
+
+    $(function() {
+        $('#search-input').on('focus', function() {
+            $('.search__nav').addClass('active');
+        });
+
+        // $('#search-input').on('keyup', function() {
+        //   $('#hits-container').scrollTop(0);
+        // })
+
+        $('.search__close').on('click', function(evt) {
+            evt.preventDefault();
+            $('#search-input').val('');
+            $('.search__nav').removeClass('active');
+        });
+
+        $('#search-input').on('blur', function(evt) {
+            if(!evt.isDefaultPrevented) {
+                console.log("blur");
+                $('.search__nav').removeClass('active');
+            }
+        });
+        let search = instantsearch({
+            appId: 'TCEAIJWSQQ',
+            apiKey: '0a339ae0728b5cb0c3e80fd18141c8cd',
+            indexName: 'bt_support_articles',
+            searchParameters: {replaceSynonymsInHighlight: false},
+            searchFunction: function(helper) {
+                var searchResults = $('.search-results');
+                if (helper.state.query === '') {
+                    searchResults.hide();
+                    return;
+                }
+                helper.search();
+                searchResults.show();
+            }
+        });
+
+        // add a searchBox widget
+        search.addWidget(
+            instantsearch.widgets.searchBox({
+                container: '#search-input',
+                placeholder: 'Search for libraries in France...'
+            })
+        );
+
+        // start
+        search.start();
+    });
+
+    function toTitleCase(str) {
+        return str.replace(/(?:^|\s)\w/g, function(match) {
+            return match.toUpperCase();
+        });
+    }
+
+    $(function() {
+        $('#search-input-1').on('focus', function() {
+            $('.search__nav-1').addClass('active');
+        });
+
+        // $('#search-input').on('keyup', function() {
+        //   $('#hits-container').scrollTop(0);
+        // })
+
+        $('.search__close-1').on('click', function(evt) {
+            evt.preventDefault();
+            $('#search-input-1').val('');
+            $('.search__nav-1').removeClass('active');
+        });
+
+        $('#search-input-1').on('blur', function(evt) {
+            if(!evt.isDefaultPrevented) {
+                console.log("blur");
+                $('.search__nav-1').removeClass('active');
+            }
+        });
+        let search = instantsearch({
+            appId: 'TCEAIJWSQQ',
+            apiKey: '0a339ae0728b5cb0c3e80fd18141c8cd',
+            indexName: 'bt_support_articles',
+            searchParameters: {replaceSynonymsInHighlight: false},
+            searchFunction: function(helper) {
+                var searchResults = $('.search-results');
+                if (helper.state.query === '') {
+                    searchResults.hide();
+                    return;
+                }
+                helper.search();
+                searchResults.show();
+            }
+        });
+
+        // add a searchBox widget
+        search.addWidget(
+            instantsearch.widgets.searchBox({
+                container: '#search-input',
+                placeholder: 'Search for libraries in France...'
+            })
+        );
+
+        // start
+        search.start();
+    });
+
+    function toTitleCase(str) {
+        return str.replace(/(?:^|\s)\w/g, function(match) {
+            return match.toUpperCase();
+        });
+    }
+
+    $(function() {
+        $('#search-input-2').on('focus', function() {
+            $('.search__nav-2').addClass('active');
+        });
+
+        // $('#search-input').on('keyup', function() {
+        //   $('#hits-container').scrollTop(0);
+        // })
+
+        $('.search__close-2').on('click', function(evt) {
+            evt.preventDefault();
+            $('#search-input-2').val('');
+            $('.search__nav-2').removeClass('active');
+        });
+
+        $('#search-input-2').on('blur', function(evt) {
+            if(!evt.isDefaultPrevented) {
+                console.log("blur");
+                $('.search__nav-2').removeClass('active');
+            }
+        });
+        let search = instantsearch({
+            appId: 'TCEAIJWSQQ',
+            apiKey: '0a339ae0728b5cb0c3e80fd18141c8cd',
+            indexName: 'bt_support_articles',
+            searchParameters: {replaceSynonymsInHighlight: false},
+            searchFunction: function(helper) {
+                var searchResults = $('.search-results');
+                if (helper.state.query === '') {
+                    searchResults.hide();
+                    return;
+                }
+                helper.search();
+                searchResults.show();
+            }
+        });
+
+        // add a searchBox widget
+        search.addWidget(
+            instantsearch.widgets.searchBox({
+                container: '#search-input',
+                placeholder: 'Search for libraries in France...'
+            })
+        );
+
+        // start
+        search.start();
+    });
+
+    function toTitleCase(str) {
+        return str.replace(/(?:^|\s)\w/g, function(match) {
+            return match.toUpperCase();
+        });
+    }
+
+    $(function() {
+        $('#search-input-3').on('focus', function() {
+            $('.search__nav-3').addClass('active');
+        });
+
+        // $('#search-input').on('keyup', function() {
+        //   $('#hits-container').scrollTop(0);
+        // })
+
+        $('.search__close-3').on('click', function(evt) {
+            evt.preventDefault();
+            $('#search-input-3').val('');
+            $('.search__nav-3').removeClass('active');
+        });
+
+        $('#search-input-3').on('blur', function(evt) {
+            if(!evt.isDefaultPrevented) {
+                console.log("blur");
+                $('.search__nav-3').removeClass('active');
+            }
+        });
+        let search = instantsearch({
+            appId: 'TCEAIJWSQQ',
+            apiKey: '0a339ae0728b5cb0c3e80fd18141c8cd',
+            indexName: 'bt_support_articles',
+            searchParameters: {replaceSynonymsInHighlight: false},
+            searchFunction: function(helper) {
+                var searchResults = $('.search-results');
+                if (helper.state.query === '') {
+                    searchResults.hide();
+                    return;
+                }
+                helper.search();
+                searchResults.show();
+            }
+        });
+
+        // add a searchBox widget
+        search.addWidget(
+            instantsearch.widgets.searchBox({
+                container: '#search-input',
+                placeholder: 'Search for libraries in France...'
+            })
+        );
+
+        // start
+        search.start();
+    });
+
+    function toTitleCase(str) {
+        return str.replace(/(?:^|\s)\w/g, function(match) {
+            return match.toUpperCase();
+        });
+    }
+
+    //Search End
+
 
     //    Кнопка вверх (.btn_up) Begin
 

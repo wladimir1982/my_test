@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Creative Digital</title>
+    <title>My Test</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -329,7 +329,7 @@
                         <p class="slider-jq__subtitle">The Thorn Birds</p>
                     </li>
                 </ul>
-                    <button class="slider-jq__next">Follow &#8853;</button>
+                <button class="slider-jq__next">Follow &#8853;</button>
             </div>
 
             <form class="form">
@@ -363,6 +363,123 @@
 
         </div>
         <!--END container-->
+    </section>
+
+    <section class="toggles">
+        <div class="row">
+
+            <div class="switch">
+                <div class="switch__row">
+                    <span class="switch__text">Switch ON</span>
+                    <div class="switch__flag">
+                        <input type="checkbox" id="check1">
+                        <label for="check1"></label>
+                    </div>
+                </div>
+                <div class="switch__row">
+                    <span class="switch__text">Switch OFF</span>
+                    <div class="switch__flag">
+                        <input type="checkbox" id="check2" checked>
+                        <label for="check2"></label>
+                    </div>
+                </div>
+                <div slider id="slider-distance">
+                    <div>
+                        <div inverse-left style="width:70%;"></div>
+                        <div inverse-right style="width:70%;"></div>
+                        <div range style="left:30%;right:40%;"></div>
+                        <span thumb style="left:30%;"></span>
+                        <span thumb style="left:60%;"></span>
+                        <div sign style="left:30%;">
+                            <span id="value">30</span>
+                        </div>
+                        <div sign style="left:60%;">
+                            <span id="value">60</span>
+                        </div>
+                    </div>
+                    <input type="range" tabindex="0" value="30" max="100" min="0" step="1" oninput="
+  this.value=Math.min(this.value,this.parentNode.childNodes[5].value-1);
+  var value=(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.value)-(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.min);
+  var children = this.parentNode.childNodes[1].childNodes;
+  children[1].style.width=value+'%';
+  children[5].style.left=value+'%';
+  children[7].style.left=value+'%';children[11].style.left=value+'%';
+  children[11].childNodes[1].innerHTML=this.value;"/>
+
+                    <input type="range" tabindex="0" value="60" max="100" min="0" step="1" oninput="
+  this.value=Math.max(this.value,this.parentNode.childNodes[3].value-(-1));
+  var value=(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.value)-(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.min);
+  var children = this.parentNode.childNodes[1].childNodes;
+  children[3].style.width=(100-value)+'%';
+  children[5].style.right=(100-value)+'%';
+  children[9].style.left=value+'%';children[13].style.left=value+'%';
+  children[13].childNodes[1].innerHTML=this.value;"/>
+                </div>
+                <div slider id="slider-distance">
+                    <div>
+                        <div inverse style="width:70%;"></div>
+                        <div range style="width:30%;"></div>
+                        <span thumb style="left:30%;"></span>
+                        <div sign style="left:30%;">
+                            <span id="value">30</span>
+                        </div>
+                    </div>
+                    <input type="range" tabindex="0" value="30" max="100" min="0" step="1"
+                           oninput="var value=(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.value)-(100/(parseInt(this.max)-parseInt(this.min)))*parseInt(this.min);var children = this.parentNode.childNodes[1].childNodes;children[1].style.width=(100-value)+'%';children[3].style.width=value+'%';children[5].style.left=value+'%';children[7].style.left=value+'%';children[7].childNodes[1].innerHTML=this.value;"
+                    />
+                </div>
+            </div>
+            <div class="dropdown">
+                <div class="dropdown__content">
+                <div class="dropdown__admin-panel"><label for="toggle" class="admin-text">Admin Settings</label></div>
+                <input class="dropdown__inp" type="checkbox" id="toggle">
+                <label class="dropdown__cog octicon octicon-gear" for="toggle"></label>
+                <div class="dropdown__menu">
+                <div class="dropdown__arrow"></div>
+                <a href="#toggle">Edit Users <span class="icon octicon octicon-person"></span></a>
+                <a href="#toggle">Web Statistics <span class="icon octicon octicon-graph"></span></a>
+                <a href="#toggle">Upload Settings <span class="icon octicon octicon-cloud-upload"></span></a>
+                <a href="#toggle">Edit Slider <span class="icon octicon octicon-pencil"></span></a>
+                </div>
+                </div>
+            </div>
+            <div class="search">
+                <div class="search__nav">
+
+                    <div class="search__input">
+                        <i class="fa fa-search aria-hidden='true' search__icon"></i>
+                        <input type="text" placeholder="Congratulations! You have been successful" id="search-input" />
+                        <i class="search__close fa fa-times-circle-o aria-hidden='true'"></i>
+                    </div>
+                </div>
+
+                <div class="search__nav-1">
+                    <div class="search__input-1">
+                        <i class="fa fa-search aria-hidden='true' search__icon-1"></i>
+                        <input class="input-a" type="text" placeholder="Attention! I recommend you look at me" id="search-input-1" />
+                        <i class="search__close-1 fa fa-times-circle-o aria-hidden='true'"></i>
+                    </div>
+
+                </div>
+                <div class="search__nav-2">
+                    <div class="search__input-2">
+                        <i class="fa fa-search aria-hidden='true' search__icon-2"></i>
+                        <input class="input-b" type="text" placeholder="Warning! Are you sure you want to do this?" id="search-input-2" />
+                        <i class="search__close-2 fa fa-times-circle-o aria-hidden='true'"></i>
+                    </div>
+                </div>
+
+                <div class="search__nav-3">
+                    <div class="search__input-3">
+                        <i class="fa fa-search aria-hidden='true' search__icon-3"></i>
+                        <input class="input-c" type="text" placeholder="Oops! Somethings gone wrong" id="search-input-3" />
+                        <i class="search__close-3 fa fa-times-circle-o aria-hidden='true'"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
     </section>
 
 </main>

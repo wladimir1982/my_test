@@ -1,6 +1,6 @@
 .drop {
   padding-top: rem-calc(30);
-  padding-bottom: rem-calc(30);
+  //padding-bottom: rem-calc(30);
 }
 
 .row {
@@ -103,7 +103,6 @@
   position: relative;
   @media screen and (max-width: 650px) {
     @include flex-grid-column(12);
-    //margin-bottom: rem-calc(30);
   }
 
   &__wrap {
